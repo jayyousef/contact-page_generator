@@ -1,3 +1,4 @@
+const fs = require("fs");
 function startHtml() {
     const html = `<!DOCTYPE html>
     <html lang="en">
@@ -14,7 +15,7 @@ function startHtml() {
         </nav>
         <div class="container">
             <div class="row">`;
-    fs.writeFile("./output/team.html", html, function(err) {
+    fs.writeFile("./output/team.html", html, function (err) {
         if (err) {
             console.log(err);
         }
@@ -23,7 +24,7 @@ function startHtml() {
 }
 
 function addHtml(member) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         const name = member.getName();
         const role = member.getRole();
         const id = member.getId();
@@ -73,7 +74,7 @@ function addHtml(member) {
             };
             return resolve();
         });
-    });    
+    });
 }
 
 function finishHtml() {
@@ -100,8 +101,7 @@ function finishHtml() {
 // initApp();
 
 module.exports = {
-    startHtml, 
-    addHtml, 
+    startHtml,
+    addHtml,
     finishHtml
 }
-
