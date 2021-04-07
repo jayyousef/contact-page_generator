@@ -13,24 +13,55 @@ function init() {
     addManager();
 }
 
+const validateString = (input) =>{
+    if (input < 1) {
+        return 'Please enter a valid name';
+    } else {
+        return true;
+    }
+}
+
+const validateNumber = (input) =>{
+    if (input = isNaN(parseFloat(input)) || input < 1) {
+        return ("Please enter a valid number")
+    } else {
+        return true;
+    }
+}
+
+
+const validateEmail = (input) =>{
+    if (input.includes('@')) {
+        return true;
+    } else {
+        return 'Please enter a valid email';
+    }
+}
+
 function addManager() {
-    inquirer.prompt([{
-                message: "Enter manager's name",
-                name: "name"
-            },
-            {
-                message: "Enter  manager's id",
-                name: "id"
-            },
-            {
-                message: "Enter manager's email address",
-                name: "email"
-            },
-            {
-                message: "Enter manager's office number",
-                name: "officeNum"
-            }
-        ])
+    inquirer.prompt(
+            [   {
+                    message: "Enter manager's name",
+                    name: "name",
+                    validate: validateString
+                },
+                {
+                    message: "Enter manager's id",
+                    name: "id",
+                    validate: validateNumber
+
+                },
+                {
+                    message: "Enter manager's email address",
+                    name: "email",
+                    validate: validateEmail
+                },
+                {
+                    message: "Enter manager's office number",
+                    name: "officeNum",
+                    validate: validateNumber
+                }
+            ])
         .then(function (response) {
 
             inquirer.prompt([{
@@ -61,10 +92,10 @@ function addManager() {
 }
 
 function addMember() {
-    inquirer.prompt([
-            {
+    inquirer.prompt([{
                 message: "Enter team member's name",
-                name: "name"
+                name: "name",
+                validate: validateString
             },
             {
                 type: "list",
@@ -77,11 +108,13 @@ function addMember() {
             },
             {
                 message: "Enter team member's id",
-                name: "id"
+                name: "id",
+                validate: validateNumber
             },
             {
                 message: "Enter team member's email address",
-                name: "email"
+                name: "email",
+                validate: validateEmail
             }
         ])
         .then(function (response) {
@@ -94,7 +127,8 @@ function addMember() {
 
             inquirer.prompt([{
                     message: `Enter team member's ${roleInfo}`,
-                    name: "roleInfo"
+                    name: "roleInfo",
+                    validate: validateString
                 },
                 {
                     type: "list",

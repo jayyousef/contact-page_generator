@@ -15,7 +15,7 @@ function startHtml() {
         </nav>
         <div class="container">
             <div class="row">`;
-    fs.writeFile("./output/team.html", html, function (err) {
+    fs.writeFile("./dist/team.html", html, function (err) {
         if (err) {
             console.log(err);
         }
@@ -38,7 +38,7 @@ function addHtml(member) {
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${id}</li>
                 <li class="list-group-item"><a href = "mailto:${email}">Email Address: ${email}</a></li>
-                <li class="list-group-item"><a href="https://github.com/${gitHub}" target="_blank">WGitHub: ${gitHub}</a></li>
+                <li class="list-group-item"><a href="https://github.com/${gitHub}" target="_blank">GitHub: ${gitHub}</a></li>
             </ul>
             </div>
         </div>`;
@@ -68,7 +68,7 @@ function addHtml(member) {
         </div>`
         }
         console.log("adding team member");
-        fs.appendFile("./output/team.html", data, function (err) {
+        fs.appendFile("./dist/team.html", data, function (err) {
             if (err) {
                 return reject(err);
             };
@@ -84,7 +84,7 @@ function finishHtml() {
 </body>
 </html>`;
 
-    fs.appendFile("./output/team.html", html, function (err) {
+    fs.appendFile("./dist/team.html", html, function (err) {
         if (err) {
             console.log(err);
         };
