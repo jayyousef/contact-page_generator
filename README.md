@@ -41,6 +41,7 @@ This app will help organize all employee information in one easy to access websi
 After installing the project, make sure to navigate to the correct directory and run “npm init -y” and then “npm install” After you’ve got the project ready, simply run “node index.js” or “node .” Answer the questions as they appear in the terminal and you can find your new file in the 'dist' directory.
 
 [Click here for a video walkthrough](https://youtu.be/H7L9zCEHKfw)
+
 [Click Here to see an example HTML page](./example-team.html)
 
 ## Credits
@@ -65,4 +66,4 @@ The tests in this project run test for the classes to make sure the new classes 
 ## Questions <a name="contact"></a>
 If you have any questions or issues you can find my github profile [here](www.github.com/jayyousef) => www.github.com/jayyousef
 
-You can also contact me at my [email address](mailto:jay.yousef@gmail.com): jay.yousef@gmail.com)
+You can also contact me at my [email address](mailto:jay.yousef@gmail.com): jay.yousef@gmail.com
