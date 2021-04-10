@@ -149,7 +149,6 @@ function addMember() {
                 employees.push(newMember);
                 generateHTML.addHtml(newMember)
                     .then(function () {
-                        console.log(newMember)
                         if (data.moreMembers == "yes") {
                             addMember();
                         } else {
